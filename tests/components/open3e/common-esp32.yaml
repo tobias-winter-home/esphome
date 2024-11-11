@@ -1,0 +1,13 @@
+# Configure the CAN bus
+canbus:
+  - platform: esp32_can
+    id: my_canbus
+    tx_pin: GPIO21
+    rx_pin: GPIO22
+    bit_rate: 250kbps
+
+# Configure the Open3E component
+open3e:
+  id: my_open3e
+  canbus_id: my_canbus
+  update_interval: 60s
