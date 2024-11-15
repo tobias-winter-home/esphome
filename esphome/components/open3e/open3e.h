@@ -6,7 +6,9 @@
 namespace esphome {
 namespace open3e {
 
-class Open3EComponent : public PollingComponent {
+static const char *const TAG = "open3e";
+
+class Open3EComponent : public canbus::CanbusTrigger, public PollingComponent {
  public:
   void setup() override;
   void update() override;
@@ -15,8 +17,6 @@ class Open3EComponent : public PollingComponent {
 
  protected:
   canbus::Canbus *canbus_;
-
-  void handle_can_frame(const canbus::CanFrame &frame);
 };
 
 }  // namespace open3e

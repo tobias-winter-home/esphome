@@ -5,6 +5,7 @@ canbus:
     tx_pin: GPIO21
     rx_pin: GPIO22
     bit_rate: 250kbps
+    can_id: 4
 
 # Configure the Open3E component
 open3e:
